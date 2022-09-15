@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="product-card">
+        <div class="logo-cart">
+            <img src="/logo.png" alt="logo">
+            <i class='bx bxs-shopping-bag'></i>
+        </div>
+        <div class="main-images">
+            <img id="red" class="red " src="/1.png"  alt="red1">
+            <img id="blue" class="blue " src="/2.png" alt="red1">
+            <img id="green" class="green active" src="/3.png" alt="red1">
+        </div>
+        <div class="shoe-details">
+            <span class="shoe_name">Nike red</span>
+            <p>“Crafting visual narratives that touch people”. Lorem Ipsum is formed by dreamers that strongly valorize.</p>
+            <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+                
+            </div>
+        </div>
+        <div class="color-price">
+            <div class="color-option">
+                <span class="color">Color:</span>
+                <div class="circles">
+                    <span class="circle red active" id="red"></span>
+                    <span class="circle blue" id="blue"></span>
+                    <span class="circle green "id="green"></span>
+                </div>
+            </div>
+            <div class="price">
+                    <span class="price_num">$09.00</span>
+                    <span class="price_letter">Nine dollar only</span>
+            </div>
+        </div>
+            <div class="button">
+                <button>Add To Cart</button>
+            </div>
+        </div>
+    </div>  
+    
+    
+
+<script>
+    let circle = document.querySelector(".color-option");
+    circle.addEventListener("click", (e)=>{
+        let target = e.target;
+        if(target.classList.contains("circle")){
+            circle.querySelector(".active").classList.remove("active");
+            target.classList.add("active");
+            document.querySelector(".main-images .active").classList.remove("active");
+            document.querySelector(`.main-images .${target.id}`).classList.add("active");
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
